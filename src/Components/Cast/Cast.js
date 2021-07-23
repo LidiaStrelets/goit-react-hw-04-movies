@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Cast.scss';
 
 const Cast = ({ cast }) => {
@@ -15,6 +16,16 @@ const Cast = ({ cast }) => {
       ))}
     </ul>
   );
+};
+Cast.propTypes = {
+  cast: PropTypes.arrayOf(
+    PropTypes.exact({
+      character: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      photo: PropTypes.string.isRequired,
+    }),
+  ),
 };
 
 export default Cast;

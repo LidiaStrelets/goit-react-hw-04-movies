@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Reviews.scss';
 
 const Reviews = ({ reviews }) => {
@@ -14,6 +15,16 @@ const Reviews = ({ reviews }) => {
   ) : (
     <p>No reviews available yet</p>
   );
+};
+
+Reviews.propTypes = {
+  reviews: PropTypes.arrayOf(
+    PropTypes.exact({
+      author: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      test: PropTypes.string.isRequired,
+    }),
+  ),
 };
 
 export default Reviews;
