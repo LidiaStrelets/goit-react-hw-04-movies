@@ -5,7 +5,6 @@ import './Cast.scss';
 import defPhoto from './../../photo.jpeg';
 
 const Cast = ({ cast }) => {
-  console.log(cast);
   return (
     <ul className="castList">
       {cast.map(({ character, id, name, photo }) => (
