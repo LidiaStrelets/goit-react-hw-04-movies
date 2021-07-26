@@ -29,7 +29,6 @@ class MoviesPage extends Component {
       const results = await fetch.getMovieByTitle(this.props.match.params.query);
 
       this.setState({ query: '', movies: results.map(({ title, id }) => ({ title, id })) });
-      // console.log(response);
     } catch (error) {
       console.log(error.response.data.errors);
     }

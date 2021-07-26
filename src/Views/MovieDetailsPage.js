@@ -49,6 +49,9 @@ class MovieDetailsPage extends Component {
       this.setState({
         reviews: reviews.map(({ author, id, content }) => ({ author, id, text: content })),
       });
+      this.state.reviews.map(rev => {
+        console.log(typeof rev.text);
+      });
     } catch (error) {
       console.log(error);
     }
@@ -126,11 +129,7 @@ class MovieDetailsPage extends Component {
             <p className="additionalDetailsText">Reviews</p>
           </NavLink>
         </div>
-        <Route
-          path={`${match.path}/cast`}
-          // "/movieId"
-          render={props => <Cast {...props} cast={cast} />}
-        />
+        <Route path={`${match.path}/cast`} render={props => <Cast {...props} cast={cast} />} />
         <Route
           path={`${match.path}/reviews`}
           render={props => <Reviews {...props} reviews={reviews} />}

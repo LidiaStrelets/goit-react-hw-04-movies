@@ -19,15 +19,18 @@ const Cast = ({ cast }) => {
     </ul>
   );
 };
+
 Cast.defaultProps = {
   cast: { photo: defPhoto },
 };
+
 Cast.propTypes = {
   cast: PropTypes.arrayOf(
     PropTypes.exact({
       character: PropTypes.string.isRequired,
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
+
       photo: PropTypes.string,
     }),
   ),
